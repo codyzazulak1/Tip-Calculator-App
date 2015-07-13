@@ -52,8 +52,13 @@
                                     <action selector="resetButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4md-ac-ufc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total: $0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-Fm-eZ0">
-                                <rect key="frame" x="16" y="104" width="159" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Guests Amount" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-ui-NOF">
+                                <rect key="frame" x="16" y="104" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Per Guest: $0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-Fm-eZ0">
+                                <rect key="frame" x="16" y="142" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="billAmountTextField" destination="olj-ES-RHw" id="M5V-ok-zAO"/>
+                        <outlet property="guestAmountTextField" destination="YhE-ui-NOF" id="Rcd-cC-An0"/>
                         <outlet property="tipAmountLabel" destination="eRw-Fm-eZ0" id="Cg0-Ry-gq8"/>
                         <outlet property="tipPercentageTextField" destination="kfw-c2-Qoe" id="MMh-4D-zdU"/>
                     </connections>

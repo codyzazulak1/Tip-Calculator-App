@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *billAmountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tipPercentageTextField;
+@property (weak, nonatomic) IBOutlet UITextField *guestAmountTextField;
 @property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
 
 @end
@@ -31,15 +32,20 @@
 - (IBAction)calculateTip:(UIButton *)sender {
     float total = [self.billAmountTextField.text floatValue];
     float tipPercent = [self.tipPercentageTextField.text floatValue]/100;
+    float guests = [self.guestAmountTextField.text floatValue];
+    if (guests == 0.0) {
+        guests = 1.0;
+    }
     float tipAmount = total*tipPercent;
-    float billTotal = total + tipAmount;
+    float billTotal = (total + tipAmount)/guests;
     
-    [self.tipAmountLabel setText:[NSString stringWithFormat:@"Total: $%.2f", billTotal]];
+    [self.tipAmountLabel setText:[NSString stringWithFormat:@"Total Per Guest: $%.2f", billTotal]];
 }
 - (IBAction)resetButtonPressed:(UIButton *)sender {
     self.billAmountTextField.text = @"";
     self.tipPercentageTextField.text = @"";
-    [self.tipAmountLabel setText:[NSString stringWithFormat:@"Total: $0.00"]];
+    self.guestAmountTextField.text = @"";
+    [self.tipAmountLabel setText:[NSString stringWithFormat:@"Total Per Guest: $0.00"]];
 }
 
 @end
